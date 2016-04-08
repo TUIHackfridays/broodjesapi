@@ -41,7 +41,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://cloudoki.com',
+	'url' => env('APP_URL', 'http://tuihackfridays.com'),
 
 	/*
 	|--------------------------------------------------------------------------
