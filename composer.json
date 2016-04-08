@@ -1,7 +1,7 @@
 {
-    "name": "Cloudoki/folded-api",
+    "name": "TUIHackfridays/broodjesapi",
     "description": "Folded API",
-    "keywords": ["api","laravel","cloudoki","oauth2"],
+    "keywords": ["api","laravel","tui","oauth2"],
     "license": "Private",
     "type": "project",
     "require": {
