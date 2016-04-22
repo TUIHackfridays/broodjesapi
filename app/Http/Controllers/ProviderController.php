@@ -6,16 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class ProviderController extends Controller
+class ProviderController extends BaseController
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Display a listing of providers.
+     * @SWG\Get(
+        tags={"providers"},
+        path="/providers",
+        summary="List of providers",
+        description="Returns a list of providers. Private endpoint",
+        @SWG\Response(response=200, ref="#/responses/success_object")
+        )
      */
     public function index()
     {
-        //
+        return response()->json(['providers']);
     }
 
     /**

@@ -6,16 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class SandwichController extends Controller
+class SandwichController extends BaseController
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Display a listing of the sandwiches.
+     * @SWG\Get(
+        tags={"sandwiches"},
+        path="/sandwiches",
+        summary="List of sandwiches",
+        description="Returns a list of sandwiches. Private endpoint",
+        @SWG\Response(response=200, ref="#/responses/success_object")
+        )
      */
     public function index()
     {
-        //
+        return response()->json(['sandwiches']);
     }
 
     /**

@@ -63,6 +63,10 @@ Route::group(['prefix' => '1'], function($app)
 {
 	# System
 	$app->get('ping', 'ApiController@ping');
+	# Sandwiches
+	$app->get('sandwiches', 'SandwichController@index');
+	# Providers
+	$app->get('providers', 'ProviderController@index');
 });
 
 
@@ -83,9 +87,4 @@ Route::group(['prefix' => '1', 'middleware' => 'oauth_bearer'], function($app)
 	$app->patch 	('users/{id}/password', 				'UserController@updatePassword');
  	$app->patch 	('accounts/{id}/users/{id2}/password', 	'UserController@updatePassword');
  	$app->resource	('accounts.users',						'UserController',			['except' => ['create', 'edit']]);
-
-	# Sandwiches
-	$app->get('sandwiches', 'SandwichController');
-	# Providers
-	$app->get('providers', 'ProviderController');
 });
