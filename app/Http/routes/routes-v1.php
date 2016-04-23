@@ -67,6 +67,7 @@ Route::group(['prefix' => '1'], function($app)
 	$app->get('sandwiches', 'SandwichController@index');
 	# Providers
 	$app->get('providers', 'ProviderController@index');
+	$app->get('providers/{id}', 'ProviderController@show');
 });
 
 

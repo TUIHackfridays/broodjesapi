@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Provider;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -20,7 +21,8 @@ class ProviderController extends BaseController
      */
     public function index()
     {
-        return response()->json(['providers']);
+        $providers = Provider::all();
+        return response()->json($providers);
     }
 
     /**
@@ -41,7 +43,9 @@ class ProviderController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        $provider = new Provider();
+        $provider->name = $request->name;
+        $provider->save();
     }
 
     /**
@@ -52,7 +56,8 @@ class ProviderController extends BaseController
      */
     public function show($id)
     {
-        //
+        $provider = Provider::with('sandwiches')->find($id);
+        return response()->json($provider);
     }
 
     /**
@@ -75,7 +80,9 @@ class ProviderController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        $provider = Provider::find($id);
+        $provider->name = $request->name;
+        $provider->save();
     }
 
     /**
@@ -86,6 +93,7 @@ class ProviderController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        $provider = Provider::find($id);
+        $provider->delete;
     }
 }

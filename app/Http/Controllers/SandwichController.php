@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sandwich;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -20,7 +21,8 @@ class SandwichController extends BaseController
      */
     public function index()
     {
-        return response()->json(['sandwiches']);
+        $sandwiches = Sandwich::with('provider')->get();
+        return response()->json($sandwiches);
     }
 
     /**
