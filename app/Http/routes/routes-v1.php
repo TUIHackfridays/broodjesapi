@@ -63,11 +63,20 @@ Route::group(['prefix' => '1'], function($app)
 {
 	# System
 	$app->get('ping', 'ApiController@ping');
-	# Sandwiches
-	$app->get('sandwiches', 'SandwichController@index');
+
 	# Providers
-	$app->get('providers', 'ProviderController@index');
-	$app->get('providers/{id}', 'ProviderController@show');
+	$app->get   ('providers', 'ProviderController@index');
+	$app->post  ('providers', 'ProviderController@store');
+	$app->get   ('providers/{id}', 'ProviderController@show');
+	$app->patch ('providers/{id}', 'ProviderController@update');
+	$app->delete('providers/{id}', 'ProviderController@destroy');
+
+	# Sandwiches
+	$app->get   ('sandwiches', 'SandwichController@index');
+	$app->post  ('sandwiches', 'SandwichController@store');
+	$app->get   ('sandwiches/{id}', 'SandwichController@show');
+	$app->patch ('sandwiches/{id}', 'SandwichController@update');
+	$app->delete('sandwiches/{id}', 'SandwichController@destroy');
 });
 
 

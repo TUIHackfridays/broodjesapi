@@ -26,16 +26,6 @@ class SandwichController extends BaseController
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -43,7 +33,13 @@ class SandwichController extends BaseController
      */
     public function store(Request $request)
     {
-        //
+        $sandwich = new Sandwich();
+        $sandwich->name = $request->name;
+        $sandwich->description = $request->description;
+        $sandwich->price = $request->price;
+        $sandwich->provider_id = $request->provider_id;
+
+        $sandwich->save();
     }
 
     /**
@@ -54,18 +50,8 @@ class SandwichController extends BaseController
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        $sandwich = Sandwich::find($id);
+        return response()->json($sandwich);
     }
 
     /**
@@ -77,7 +63,12 @@ class SandwichController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        $sandwich = Sandwich::find($id);
+        $sandwich->name = $request->name;
+        $sandwich->description = $request->description;
+        $sandwich->price = $request->price;
+        $sandwich->provider_id = $request->provider_id;
+        $sandwich->save();
     }
 
     /**
@@ -88,6 +79,7 @@ class SandwichController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        $sandwich = Sandwich::find($id);
+        $sandwich->delete();
     }
 }
