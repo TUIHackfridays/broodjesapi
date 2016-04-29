@@ -49,6 +49,7 @@ class DatabaseSeeder extends Seeder
         DB::table('orders')->truncate();
         foreach (range(1,5) as $index) {
           DB::table('orders')->insert([
+            'order_item_id' => rand(1,10),
             'customer_id' => rand(1, 5),
             'provider_id' => rand(1, 5),
             'price' => $faker->randomFloat(null, 20, 30),
