@@ -77,6 +77,13 @@ Route::group(['prefix' => '1'], function($app)
 	$app->get   ('sandwiches/{id}', 'SandwichController@show');
 	$app->patch ('sandwiches/{id}', 'SandwichController@update');
 	$app->delete('sandwiches/{id}', 'SandwichController@destroy');
+
+	# Orders
+	$app->get   ('orders', 'OrderController@index');
+	$app->post  ('orders', 'OrderController@store');
+	$app->get   ('orders/{id}', 'OrderController@show');
+	$app->patch ('orders/{id}', 'OrderController@update');
+	$app->delete('orders/{id}', 'OrderController@destroy');
 });
 
 
