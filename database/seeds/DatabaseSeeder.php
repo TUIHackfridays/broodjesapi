@@ -72,5 +72,23 @@ class DatabaseSeeder extends Seeder
           ]);
         }
         $this->command->info('Order items table seeded!');
+
+        #Customers
+        DB::table('customers')->truncate();
+        foreach (range(1,10) as $index) {
+          DB::table('customers')->insert([
+            'name_company' => $faker->name,
+            'name_contact' => $faker->name,
+            'street' => $faker->streetName,
+            'nr' => rand(1, 255),
+            'zip' => 8400,
+            'city' => 'Oostende',
+            'country' => 'Belgium',
+            'phone' => $faker->phoneNumber,
+            'created_at' => new Carbon(),
+            'updated_at' => new Carbon()
+          ]);
+        }
+        $this->command->info('Customers table seeded!');
     }
 }
