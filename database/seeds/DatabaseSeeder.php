@@ -29,8 +29,9 @@ class DatabaseSeeder extends Seeder
             'updated_at' => new Carbon()
           ]);
         }
+        $this->command->info('Providers table seeded!');
 
-        #Sandwiches
+        # Sandwiches
         DB::table('sandwiches')->truncate();
         foreach (range(1,20) as $index) {
           DB::table('sandwiches')->insert([
@@ -42,5 +43,34 @@ class DatabaseSeeder extends Seeder
             'updated_at' => new Carbon()
           ]);
         }
+        $this->command->info('Sandwiches table seeded!');
+
+        # Orders
+        DB::table('orders')->truncate();
+        foreach (range(1,5) as $index) {
+          DB::table('orders')->insert([
+            'customer_id' => rand(1, 5),
+            'provider_id' => rand(1, 5),
+            'price' => $faker->randomFloat(null, 20, 30),
+            'paid' => true,
+            'created_at' => new Carbon(),
+            'updated_at' => new Carbon()
+          ]);
+        }
+        $this->command->info('Orders table seeded!');
+
+        # Order items
+        DB::table('order_items')->truncate();
+        foreach (range(1,10) as $index) {
+          DB::table('order_items')->insert([
+            'order_id' => rand(1, 5),
+            'sandwich_id' => rand(1, 10),
+            'provider_id' => rand(1, 5),
+            'price' => $faker->randomFloat(null, 1, 4),
+            'created_at' => new Carbon(),
+            'updated_at' => new Carbon()
+          ]);
+        }
+        $this->command->info('Order items table seeded!');
     }
 }
