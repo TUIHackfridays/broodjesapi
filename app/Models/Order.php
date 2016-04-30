@@ -17,6 +17,14 @@ class Order extends Model
     return $this->hasMany('App\Models\OrderItem');
   }
 
+  // FIXME
+  /*
+  public function customer()
+  {
+    return $this->hasOne('App\Models\Customer');
+  }
+  */
+
   public function provider()
   {
     return $this->hasOne('App\Models\Provider');

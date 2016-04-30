@@ -84,6 +84,18 @@ Route::group(['prefix' => '1'], function($app)
 	$app->get   ('orders/{id}', 'OrderController@show');
 	$app->patch ('orders/{id}', 'OrderController@update');
 	$app->delete('orders/{id}', 'OrderController@destroy');
+
+	# Orders find by customer id
+	$app->get   ('orders/customers/{customerId}', 'OrderController@indexByCustomer');
+	$app->get   ('orders/{id}/customers/{customerId}', 'OrderController@show');
+	$app->patch ('orders/{id}/customers/{customerId}', 'OrderController@update');
+	$app->delete('orders/{id}/customers/{customerId}', 'OrderController@destroy');
+
+	# Orders find by provider id
+	$app->get   ('orders/providers/{providerId}', 'OrderController@indexByProvider');
+	$app->get   ('orders/{id}/providers/{providerId}', 'OrderController@show');
+	$app->patch ('orders/{id}/providers/{providerId}', 'OrderController@update');
+	$app->delete('orders/{id}/providers/{providerId}', 'OrderController@destroy');
 });
 
 

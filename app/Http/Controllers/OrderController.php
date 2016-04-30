@@ -27,6 +27,30 @@ class OrderController extends Controller
   }
 
   /**
+   * List all orders for the given provider id.
+   *
+   * @param $id
+   * @return mixed
+   */
+  public function indexByProvider($id)
+  {
+    $orders = Order::where('provider_id', '=', $id)->get();
+    return response()->json($orders);
+  }
+
+  /**
+   * List all orders for the given customer id.
+   *
+   * @param $id
+   * @return mixed
+   */
+  public function indexByCustomer($id)
+  {
+    $orders = Order::where('customer_id', '=', $id)->get();
+    return response()->json($orders);
+  }
+
+  /**
    * Store a newly created resource in storage.
    *
    * @param  \Illuminate\Http\Request  $request
