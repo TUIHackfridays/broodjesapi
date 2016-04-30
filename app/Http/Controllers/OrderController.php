@@ -22,7 +22,7 @@ class OrderController extends Controller
    */
   public function index()
   {
-    $orders = Order::with('orderItems')->get();
+    $orders = Order::all();
     return response()->json($orders);
   }
 
@@ -50,7 +50,7 @@ class OrderController extends Controller
    */
   public function show($id)
   {
-    $order = Order::with('order_items')->find($id);
+    $order = Order::with('orderItems')->find($id);
     return response()->json($order);
   }
 
