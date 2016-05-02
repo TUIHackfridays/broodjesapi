@@ -17,16 +17,16 @@ class Order extends Model
     return $this->hasMany('App\Models\OrderItem');
   }
 
+  public function provider()
+  {
+    return $this->belongsTo('App\Models\Provider');
+  }
+
   // FIXME
   /*
   public function customer()
   {
-    return $this->hasOne('App\Models\Customer');
+    return $this->belongsTo('App\Models\Customer');
   }
   */
-
-  public function provider()
-  {
-    return $this->hasOne('App\Models\Provider');
-  }
 }

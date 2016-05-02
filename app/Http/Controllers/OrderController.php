@@ -34,7 +34,7 @@ class OrderController extends Controller
    */
   public function indexByProvider($id)
   {
-    $orders = Order::where('provider_id', '=', $id)->get();
+    $orders = Order::with(array('provider'))->where('provider_id', '=', $id)->get();
     return response()->json($orders);
   }
 
@@ -74,7 +74,8 @@ class OrderController extends Controller
    */
   public function show($id)
   {
-    $order = Order::with('orderItems')->find($id);
+    // FIXME add customer relationship
+    $order = Order::with(array('orderItems', 'provider'))->find($id);
     return response()->json($order);
   }
 

@@ -16,4 +16,9 @@ class Provider extends Model
   {
     return $this->hasMany('App\Models\Sandwich');
   }
+
+  public function orders()
+  {
+    return $this->hasMany('App\Models\Order');
+  }
 }
