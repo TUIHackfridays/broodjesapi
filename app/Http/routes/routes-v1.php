@@ -98,7 +98,10 @@ Route::group(['prefix' => '1'], function($app)
 	$app->delete('orders/{id}/providers/{providerId}', 'OrderController@destroy');
 });
 
-
+Route::group(['prefix' => '1'], function( $app )
+{
+	$app->get( 'sandwich', 'BroodjesController@sandwich' );
+});
 
 /**
  *  Authed endpoints.
