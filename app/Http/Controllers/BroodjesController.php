@@ -20,27 +20,27 @@ class BroodjesController extends BaseController
 			0 => [
 				'title'       => 'Broodje Kaas',
 				'ingredients' => 'Boter, Kaas, Tomaat, Sla, Ei, mayonnaise',
-				'uri'         => 'http://localhost/image/cheese-sandwich.png',
+				'uri'         => 'http://broodjesapi.tuihackfridays.com/images/cheese-sandwich.png',
 			],
 			1 => [
 				'title'       => 'Broodje Ham',
 				'ingredients' => 'Boter, Ham, Tomaat, Sla, Ei, mayonnaise',
-				'uri'         => 'http://localhost/image/ham-sandwich.jpg',
+				'uri'         => 'http://broodjesapi.tuihackfridays.com/images/ham-sandwich.jpg',
 			],
 			2 => [
 				'title'       => 'Club',
 				'ingredients' => 'Boter, Kaas, Ham, Tomaat, Sla, Ei, mayonnaise',
-				'uri'         => 'http://localhost/image/club-sandwich.jpg',
+				'uri'         => 'http://broodjesapi.tuihackfridays.com/images/club-sandwich.jpg',
 			],
 			3 => [
 				'title'       => 'Oriental',
 				'ingredients' => 'Kip-Curry Salade, Ananas',
-				'uri'         => 'http://localhost/image/oriental-sandwich.jpg',
+				'uri'         => 'http://broodjesapi.tuihackfridays.com/images/oriental-sandwich.jpg',
 			],
 			4 => [
 				'title'       => 'Boulette',
 				'ingredients' => 'Tomaat, Kalkoengehaktbal, Mosterd, Ketchup',
-				'uri'         => 'http://localhost/image/boulette-sandwich.jpg',
+				'uri'         => 'http://broodjesapi.tuihackfridays.com/images/boulette-sandwich.jpg',
 			],
 		];
 
